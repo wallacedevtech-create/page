@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Currículo de Wallace Alves — Front-End Developer e estudante de Engenharia de Software.">
+<title>Currículo | Wallace Alves</title>
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23000'/><text y='.9em' font-size='80' x='10'>W</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+body{
+margin:0;
+background:#000;
+font-family:'Poppins',sans-serif;
+color:#fff;
+}
+
+.resume{
+  padding:20px;
+  max-width:1100px;
+  width:95%;
+  margin:auto;
+  background:#000;
+}
+
+a{
+color:#d4a85d;
+text-decoration:none;
+transition:0.3s;
+font-size:13px;
+position:relative;
+}
+
+a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-2px;
+width:0;
+height:1px;
+background:#d4a85d;
+transition:0.3s;
+}
+
+a:hover::after{width:100%;}
+
+/* HEADER */
+
+.header{
+display:flex;
+align-items:center;
+}
+
+.name-box{
+background:#1d1f23;
+padding:60px;
+width:55%;
+}
+
+.name-box h1{
+margin:0;
+font-size:48px;
+font-weight:600;
+}
+
+.name-box h2{
+margin-top:10px;
+font-size:16px;
+letter-spacing:4px;
+color:#d4a85d;
+}
+
+.photo{
+width:45%;
+height:290px;
+overflow:hidden;
+}
+
+.photo img{
+width:100%;
+height:100%;
+object-fit:cover;
+filter:grayscale(100%);
+}
+
+/* CONTENT */
+
+.content{
+display:flex;
+padding:40px;
+gap:40px;
+}
+
+.contact a{
+color:#ffffff;
+font-size:13px;
+}
+
+.contact a:hover{color:#d4a85d;}
+
+/* LEFT */
+
+.left{
+width:40%;
+padding-right:30px;
+}
+
+.left h3{
+font-size:18px;
+margin-bottom:10px;
+}
+
+.left p{
+font-size:14px;
+line-height:1.6;
+color:#ccc;
+}
+
+.contact{margin-top:25px;}
+
+.contact div{
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:10px;
+}
+
+.icon{
+font-size:20px;
+color:#d4a85d;
+}
+
+/* EDUCATION */
+
+.education{margin-top:30px;}
+
+.education span{
+color:#aaa;
+font-size:13px;
+}
+
+/* LEARNING BOX */
+
+.learning-box{
+margin-top:20px;
+border:1px solid rgba(212,168,93,0.3);
+border-radius:12px;
+padding:16px;
+background:rgba(212,168,93,0.04);
+}
+
+.learning-box h3{
+font-size:15px;
+margin-bottom:8px;
+color:#d4a85d;
+}
+
+.learning-box p{
+font-size:13px;
+color:#aaa;
+line-height:1.6;
+margin:0;
+}
+
+/* RIGHT */
+
+.right{
+width:60%;
+}
+
+.right h3{
+font-size:18px;
+margin-bottom:20px;
+}
+
+/* SKILLS */
+
+.skill{margin-bottom:15px;}
+
+.skill-name{
+font-size:14px;
+margin-bottom:4px;
+color:#d4a85d;
+}
+
+.bar{
+background:#2b2b2b;
+height:6px;
+border-radius:3px;
+}
+
+.bar span{
+display:block;
+height:6px;
+background:#dcdcdc;
+border-radius:3px;
+}
+
+/* EXPERIENCE */
+
+.job{
+display:flex;
+align-items:flex-start;
+gap:15px;
+margin-bottom:25px;
+}
+
+.vertical-date{
+writing-mode:vertical-rl;
+transform:rotate(180deg);
+font-size:13px;
+color:#d4a85d;
+letter-spacing:2px;
+margin-right:15px;
+}
+
+.job-info{flex:1;}
+
+.job-info b{
+display:block;
+margin-bottom:5px;
+}
+
+.job-info p{
+font-size:14px;
+color:#ccc;
+}
+
+/* PROJECT BOX */
+
+.project{
+border:1px solid #d4a85d;
+padding:16px;
+border-radius:18px;
+margin-bottom:10px;
+}
+
+.project h3{
+margin-bottom:12px;
+}
+
+/* PROJECT CARDS */
+
+.project-card{
+margin-top:10px;
+padding:12px;
+border:1px solid rgba(212,168,93,0.25);
+border-radius:10px;
+background:rgba(212,168,93,0.03);
+}
+
+.project-card b{
+display:block;
+font-size:13px;
+margin-bottom:4px;
+}
+
+.project-card p{
+font-size:12px;
+color:#aaa;
+margin:0 0 8px;
+}
+
+/* BUTTONS */
+
+.btn{
+display:inline-block;
+margin-top:6px;
+padding:5px 12px;
+border:1px solid #d4a85d;
+color:#d4a85d;
+text-decoration:none;
+font-size:12px;
+border-radius:6px;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#d4a85d;
+color:#000;
+}
+
+.btn-em-breve{
+display:inline-block;
+margin-top:6px;
+padding:5px 12px;
+border:1px solid rgba(212,168,93,0.3);
+color:rgba(212,168,93,0.4);
+font-size:12px;
+border-radius:6px;
+cursor:default;
+}
+
+.project a::after{display:none;}
+.buttons a::after{display:none;}
+
+/* FOOTER */
+
+.footer{
+margin-top:40px;
+padding:20px;
+border-top:1px solid #2b2b2b;
+text-align:center;
+font-size:12px;
+color:#888;
+}
+
+.footer-text{margin-bottom:10px;}
+.footer-info p{margin:3px 0;}
+.footer a{color:#888;}
+.footer a:hover{color:#d4a85d;}
+
+/* TOOLTIP */
+
+.tooltip-container{
+position:relative;
+display:inline-block;
+cursor:pointer;
+color:#d4a85d;
+}
+
+.tooltip-text{
+visibility:hidden;
+opacity:0;
+position:absolute;
+bottom:125%;
+left:0;
+background:#1d1f23;
+color:#fff;
+padding:10px;
+border-radius:8px;
+border:1px solid #d4a85d;
+font-size:12px;
+width:max-content;
+max-width:250px;
+transition:0.3s;
+z-index:10;
+}
+
+.tooltip-text::after{
+content:"";
+position:absolute;
+top:100%;
+left:10px;
+border-width:6px;
+border-style:solid;
+border-color:#1d1f23 transparent transparent transparent;
+}
+
+.tooltip-container:hover .tooltip-text{
+visibility:visible;
+opacity:1;
+}
+
+/* RESPONSIVO */
+
+@media (max-width:900px){
+
+.resume{width:95%;}
+
+.header{flex-direction:column;}
+
+.name-box{
+width:100%;
+text-align:center;
+padding:30px;
+}
+
+.name-box h1{font-size:32px;}
+.name-box h2{font-size:13px; letter-spacing:2px;}
+
+.photo{
+width:100%;
+height:220px;
+}
+
+.content{
+flex-direction:column;
+padding:20px;
+}
+
+.left{
+width:100%;
+padding-right:0;
+margin-bottom:20px;
+}
+
+.right{width:100%;}
+
+.vertical-date{
+writing-mode:horizontal-tb;
+transform:none;
+margin-bottom:5px;
+color:#d4a85d;
+font-size:12px;
+}
+
+.job{flex-direction:column;}
+
+}
+
+/* PRINT */
+
+@page{size:A4; margin:15mm;}
+
+@media print{
+
+body{background:#fff; color:#000;}
+
+.buttons .btn{display:none;}
+
+.resume{max-width:100%; width:100%; padding:0;}
+
+.content{padding:20px; gap:20px;}
+
+.name-box{
+background:#eee;
+color:#000;
+padding:30px;
+}
+
+.photo{height:200px;}
+h1{font-size:28px;}
+h2{font-size:12px;}
+h3{font-size:14px;}
+p{font-size:12px;}
+.skill-name{font-size:12px; color:#000;}
+.vertical-date{font-size:10px;}
+.icon{color:#000;}
+
+a{color:#000; text-decoration:none;}
+
+.job,
+.project,
+.education,
+.learning-box{page-break-inside:avoid;}
+
+.btn,.footer{display:none;}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="buttons" style="margin:20px; display:flex; gap:10px; flex-wrap:wrap;">
+  <a href="index.html" class="btn">← Portfólio</a>
+  <a href="curriculo.html" target="_blank" class="btn">
+    <i class="fa-solid fa-download" style="font-size:11px;"></i> Baixar PDF
+  </a>
+</div>
+
+<div class="resume">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="name-box">
+    <h1>Wallace Alves</h1>
+    <h2>Front-End Developer | Software Engineering Student</h2>
+  </div>
+  <div class="photo">
+    <img src="assets/20260318_120212-IMG_STYLE.jpg" alt="Wallace Alves">
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+<!-- LEFT -->
+<div class="left">
+
+  <h3>About Me</h3>
+  <p>
+    Estudante de Engenharia de Software com experiência prática na criação de aplicações web
+    utilizando HTML, CSS e JavaScript, desenvolvendo interfaces modernas e responsivas.
+    Busco minha primeira oportunidade na área de tecnologia para aplicar meus conhecimentos
+    e evoluir como desenvolvedor.
+  </p>
+
+  <div class="contact">
+
+    <div>
+      <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+      <a href="mailto:wallacedev.tech@gmail.com">wallacedev.tech@gmail.com</a>
+    </div>
+
+    <div>
+      <div class="icon"><i class="fa-solid fa-phone"></i></div>
+      <a href="tel:+5564993286584">(64) 99328-6584</a>
+    </div>
+
+    <div>
+      <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+      <a href="https://instagram.com/wallacedw_" target="_blank">@wallacedw_</a>
+    </div>
+
+    <div>
+      <div class="icon"><i class="fa-brands fa-github"></i></div>
+      <a href="https://github.com/wallacedev" target="_blank">github.com/wallacedev</a>
+    </div>
+
+    <div>
+      <div class="icon"><i class="fa-solid fa-globe"></i></div>
+      <a href="https://wallacedev.tech" target="_blank">wallacedev.tech</a>
+    </div>
+
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="education">
+    <h3>Education</h3>
+
+    <div class="job">
+      <div class="vertical-date">2026<br>Atual</div>
+      <div class="job-info">
+        <b>Engenharia de Software</b>
+        <p>Cursando</p>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="vertical-date">2016<br>2019</div>
+      <div class="job-info">
+        <b>Ensino Médio</b>
+        <p>Completo</p>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="vertical-date">2002<br>2015</div>
+      <div class="job-info">
+        <b>Ensino Fundamental</b>
+        <p>Completo</p>
+      </div>
+    </div>
+
+  </div><!-- /education -->
+
+  <!-- TECH SKILLS -->
+  <div class="project">
+    <h3>Front-End Developer</h3>
+
+    <div class="skill">
+      <div class="skill-name">HTML — Intermediário</div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">CSS — Intermediário</div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">JavaScript — Básico</div>
+    </div>
+
+    <!-- PROJECTS -->
+    <h3 style="margin-top:16px;">Projects</h3>
+
+    <div class="project-card">
+      <b>Vocabulary Learning Web App</b>
+      <p>Aplicação web para aprendizado de vocabulário em inglês, com reprodução de pronúncia e foco em usabilidade.</p>
+      <span class="btn-em-breve">Em breve</span>
+    </div>
+
+    <div class="project-card">
+      <b>Responsive Landing Page</b>
+      <p>Landing page responsiva para empresa de refrigeração com layout moderno e otimização para mobile.</p>
+      <span class="btn-em-breve">Em breve</span>
+    </div>
+
+  </div>
+
+  <!-- LEARNING -->
+  <div class="learning-box">
+    <h3>Learning</h3>
+    <p>Atualmente estudando JavaScript avançado, integração com APIs, Git/GitHub e boas práticas de desenvolvimento.</p>
+  </div>
+
+</div><!-- /left -->
+
+<!-- RIGHT -->
+<div class="right">
+
+  <h3>Skills</h3>
+
+  <div class="skill">
+    <div class="skill-name">Comunicação</div>
+    <div class="bar"><span style="width:80%"></span></div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-name">Gestão</div>
+    <div class="bar"><span style="width:80%"></span></div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-name">Resolução de Problemas</div>
+    <div class="bar"><span style="width:85%"></span></div>
+  </div>
+
+  <div class="skill">
+    <div class="skill-name">Tecnologia</div>
+    <div class="bar"><span style="width:85%"></span></div>
+  </div>
+
+  <h3>Experience</h3>
+
+  <div class="job">
+    <div class="vertical-date">04/2024<br>2026</div>
+    <div class="job-info">
+      <b>Recepcionista – Receita Federal</b>
+      <p>Atendimento ao público, organização de fluxo de atendimento, suporte administrativo e resolução de demandas operacionais.</p>
+      <p class="tooltip-container">
+        Empresas terceirizadas
+        <span class="tooltip-text">
+          CK Construtora e Serviços LTDA<br>
+          Ágil LTDA<br>
+          A M ABS LTDA
+        </span>
+      </p>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="vertical-date">02/2023<br>01/2024</div>
+    <div class="job-info">
+      <b>Comando de Setor</b>
+      <p>JATAI AGROSERV LTDA</p>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="vertical-date">01/2022<br>04/2022</div>
+    <div class="job-info">
+      <b>Costureiro</b>
+      <p>COM ARTE S2 CONFECÇÕES LTDA</p>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="vertical-date">06/2021<br>10/2021</div>
+    <div class="job-info">
+      <b>Costureiro</b>
+      <p>VORAY</p>
+    </div>
+  </div>
+
+  <div class="job">
+    <div class="vertical-date">09/2016<br>03/2017</div>
+    <div class="job-info">
+      <b>Auxiliar nos Serviços de Alimentação</b>
+      <p>SERVIÇO SOCIAL DA INDÚSTRIA</p>
+    </div>
+  </div>
+
+</div><!-- /right -->
+</div><!-- /content -->
+</div><!-- /resume -->
+
+<footer class="footer">
+  <p class="footer-text">Este currículo está disponível online como parte do meu portfólio profissional.</p>
+  <div class="footer-info">
+    <p>© 2026 Wallace Alves</p>
+    <p>Email: <a href="mailto:wallacedev.tech@gmail.com">wallacedev.tech@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/wallacedev" target="_blank">github.com/wallacedev</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
