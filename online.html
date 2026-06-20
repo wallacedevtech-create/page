@@ -1,754 +1,848 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Currículo de Wallace Alves — Front-End Developer e estudante de Engenharia de Software.">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Currículo Profissional — Wallace Alves, Desenvolvedor Front-End"/>
 <title>Currículo | Wallace Alves</title>
-
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%23000'/><text y='.9em' font-size='80' x='10'>W</text></svg>">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <style>
-
-*{
-box-sizing:border-box;
+:root {
+  --ink:      #1a1a1a;
+  --ink-2:    #3d3d3d;
+  --ink-3:    #6b6b6b;
+  --rule:     #d9d9d9;
+  --bg:       #f7f5f2;
+  --white:    #ffffff;
+  --gold:     #b8873a;
+  --gold-lt:  #f0e6d3;
+  --accent:   #1d3557;
+  --max:      900px;
 }
 
-html{
-overflow-x:hidden;
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
 }
 
-body{
-margin:0;
-background:#000;
-font-family:'Poppins',sans-serif;
-color:#fff;
-overflow-x:hidden;
+/* ─── NAVBAR ─── */
+.navbar {
+  position: fixed; top: 0; left: 0; width: 100%;
+  background: rgba(247,245,242,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--rule);
+  z-index: 100;
+  padding: 0 2rem;
+}
+.nav-inner {
+  max-width: var(--max);
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+.nav-brand img { height: 32px; width: auto; }
+.nav-brand span {
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold); }
+
+.nav-actions {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+.btn-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border: 1px solid var(--rule);
+  border-radius: 3px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--ink-2);
+  background: var(--white);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.btn-nav:hover {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
+.btn-nav--gold {
+  background: var(--gold);
+  color: #fff;
+  border-color: var(--gold);
+}
+.btn-nav--gold:hover {
+  background: #9a6f2a;
+  border-color: #9a6f2a;
+  color: #fff;
 }
 
-.resume{
-  padding:20px;
-  max-width:1100px;
-  width:95%;
-  margin:auto;
-  background:#000;
+/* ─── PAGE WRAPPER ─── */
+.page {
+  max-width: var(--max);
+  margin: 80px auto 60px;
+  padding: 0 1.5rem;
 }
 
-a{
-color:#d4a85d;
-text-decoration:none;
-transition:0.3s;
-font-size:13px;
-position:relative;
+/* ─── HERO HEADER ─── */
+.resume-header {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-top: 4px solid var(--gold);
+  padding: 3rem 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
-a::after{
-content:"";
-position:absolute;
-left:0;
-bottom:-2px;
-width:0;
-height:1px;
-background:#d4a85d;
-transition:0.3s;
+.header-left { flex: 1; }
+
+.header-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
 }
 
-a:hover::after{width:100%;}
-
-/* HEADER */
-
-.header{
-display:flex;
-align-items:center;
+.header-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.1;
+  margin-bottom: 0.4rem;
 }
 
-.name-box{
-background:#1d1f23;
-padding:60px;
-width:55%;
+.header-role {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.25rem;
 }
 
-.name-box h1{
-margin:0;
-font-size:48px;
-font-weight:600;
+.header-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.5rem;
 }
 
-.name-box h2{
-margin-top:10px;
-font-size:16px;
-letter-spacing:4px;
-color:#d4a85d;
+.hc-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--ink-2);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.hc-item i {
+  font-size: 0.8rem;
+  color: var(--gold);
+  width: 14px;
+  text-align: center;
+}
+.hc-item:hover { color: var(--gold); }
+
+.header-logo {
+  flex-shrink: 0;
+}
+.header-logo img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  filter: grayscale(10%);
+  opacity: 0.9;
 }
 
-.photo{
-width:45%;
-height:290px;
-overflow:hidden;
+/* ─── TWO COLUMN LAYOUT ─── */
+.columns {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 1.5rem;
+  align-items: start;
 }
 
-.photo img{
-width:100%;
-height:100%;
-object-fit:cover;
-filter:grayscale(100%);
+/* ─── SIDEBAR ─── */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-/* CONTENT */
-
-.content{
-display:flex;
-padding:40px;
-gap:40px;
+/* ─── MAIN ─── */
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.contact a{
-color:#ffffff;
-font-size:13px;
+/* ─── CARD ─── */
+.card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  padding: 1.75rem;
 }
 
-.contact a:hover{color:#d4a85d;}
-
-/* LEFT */
-
-.left{
-width:40%;
-padding-right:30px;
+/* ─── SECTION TITLES ─── */
+.sec-title {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.sec-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
 }
 
-.left h3{
-font-size:18px;
-margin-bottom:10px;
+/* ─── PROFILE ─── */
+.profile-text {
+  font-size: 0.85rem;
+  color: var(--ink-2);
+  line-height: 1.75;
 }
 
-.left p{
-font-size:14px;
-line-height:1.6;
-color:#ccc;
+/* ─── SKILLS ─── */
+.skill-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
 }
 
-.contact{margin-top:25px;}
+.skill-row { }
 
-.contact div{
-display:flex;
-align-items:center;
-gap:10px;
-margin-bottom:10px;
+.skill-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: var(--ink-2);
+  font-weight: 500;
+  margin-bottom: 4px;
 }
 
-.icon{
-font-size:20px;
-color:#d4a85d;
+.skill-label span:last-child {
+  color: var(--ink-3);
+  font-weight: 400;
 }
 
-/* EDUCATION */
-
-.education{margin-top:30px;}
-
-.education span{
-color:#aaa;
-font-size:13px;
+.skill-bar {
+  height: 3px;
+  background: var(--gold-lt);
+  border-radius: 2px;
+  overflow: hidden;
 }
 
-/* LEARNING BOX */
-
-.learning-box{
-margin-top:20px;
-border:1px solid rgba(212,168,93,0.3);
-border-radius:12px;
-padding:16px;
-background:rgba(212,168,93,0.04);
+.skill-bar-fill {
+  height: 100%;
+  background: var(--gold);
+  border-radius: 2px;
 }
 
-.learning-box h3{
-font-size:15px;
-margin-bottom:8px;
-color:#d4a85d;
+/* ─── TAGS ─── */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
 }
 
-.learning-box p{
-font-size:13px;
-color:#aaa;
-line-height:1.6;
-margin:0;
+.tag {
+  padding: 3px 10px;
+  background: var(--gold-lt);
+  border: 1px solid rgba(184,135,58,0.25);
+  border-radius: 2px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.5px;
 }
 
-/* RIGHT */
-
-.right{
-width:60%;
+/* ─── EDUCATION TIMELINE ─── */
+.edu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
-.right h3{
-font-size:18px;
-margin-bottom:20px;
+.edu-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
 }
 
-/* SKILLS */
-
-.skill{margin-bottom:15px;}
-
-.skill-name{
-font-size:14px;
-margin-bottom:4px;
-color:#d4a85d;
+.edu-dot {
+  margin-top: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
 }
 
-.bar{
-background:#2b2b2b;
-height:6px;
-border-radius:3px;
+.edu-info { }
+
+.edu-degree {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.3;
+}
+.edu-sub {
+  font-size: 0.75rem;
+  color: var(--ink-3);
+  margin-top: 1px;
+}
+.edu-date {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin-top: 2px;
 }
 
-.bar span{
-display:block;
-height:6px;
-background:#dcdcdc;
-border-radius:3px;
+/* ─── LANGUAGES / MISC ─── */
+.misc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
 }
 
-/* EXPERIENCE */
+.misc-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+.misc-item span:first-child { color: var(--ink-2); font-weight: 500; }
+.misc-item span:last-child { color: var(--ink-3); }
 
-.job{
-display:flex;
-align-items:flex-start;
-gap:15px;
-margin-bottom:25px;
+/* ─── EXPERIENCE ─── */
+.exp-list {
+  display: flex;
+  flex-direction: column;
 }
 
-.vertical-date{
-writing-mode:vertical-rl;
-transform:rotate(180deg);
-font-size:13px;
-color:#d4a85d;
-letter-spacing:2px;
-margin-right:15px;
+.exp-item {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 1.5rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+.exp-item:first-child { padding-top: 0; }
+.exp-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+.exp-date {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1.4;
+  padding-top: 2px;
+  text-align: right;
+  letter-spacing: 0.3px;
 }
 
-.job-info{flex:1;}
+.exp-body { }
 
-.job-info b{
-display:block;
-margin-bottom:5px;
+.exp-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: 1px;
 }
 
-.job-info p{
-font-size:14px;
-color:#ccc;
+.exp-company {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.3px;
 }
 
-/* PROJECT BOX */
-
-.project{
-border:1px solid #d4a85d;
-padding:16px;
-border-radius:18px;
-margin-bottom:10px;
+.exp-note {
+  font-size: 0.72rem;
+  color: var(--ink-3);
+  font-style: italic;
+  margin-bottom: 0.5rem;
 }
 
-.project h3{
-margin-bottom:12px;
+.exp-desc {
+  font-size: 0.82rem;
+  color: var(--ink-2);
+  line-height: 1.7;
 }
 
-/* PROJECT CARDS */
-
-.project-card{
-margin-top:10px;
-padding:12px;
-border:1px solid rgba(212,168,93,0.25);
-border-radius:10px;
-background:rgba(212,168,93,0.03);
+/* ─── PROJECTS ─── */
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.project-card b{
-display:block;
-font-size:13px;
-margin-bottom:4px;
+.project-item {
+  padding: 1rem 1.25rem;
+  border-left: 3px solid var(--gold);
+  background: var(--bg);
 }
 
-.project-card p{
-font-size:12px;
-color:#aaa;
-margin:0 0 8px;
+.project-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.3rem;
 }
 
-/* BUTTONS */
-
-.btn{
-display:inline-block;
-margin-top:6px;
-padding:5px 12px;
-border:1px solid #d4a85d;
-color:#d4a85d;
-text-decoration:none;
-font-size:12px;
-border-radius:6px;
-transition:0.3s;
+.project-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--ink);
 }
 
-.btn:hover{
-background:#d4a85d;
-color:#000;
+.project-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: var(--gold-lt);
+  padding: 2px 8px;
+  border-radius: 2px;
 }
 
-button.btn{
-background:none;
-font-family:inherit;
-cursor:pointer;
+.project-desc {
+  font-size: 0.78rem;
+  color: var(--ink-3);
+  line-height: 1.6;
 }
 
-.btn-em-breve{
-display:inline-block;
-margin-top:6px;
-padding:5px 12px;
-border:1px solid rgba(212,168,93,0.3);
-color:rgba(212,168,93,0.4);
-font-size:12px;
-border-radius:6px;
-cursor:default;
+.project-stack {
+  margin-top: 0.4rem;
+  font-size: 0.7rem;
+  color: var(--accent);
+  font-weight: 600;
 }
 
-.project a::after{display:none;}
-.buttons a::after{display:none;}
-
-/* FOOTER */
-
-.footer{
-margin-top:40px;
-padding:20px;
-border-top:1px solid #2b2b2b;
-text-align:center;
-font-size:12px;
-color:#888;
+/* ─── SOFT SKILLS ─── */
+.soft-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.6rem;
 }
 
-.footer-text{margin-bottom:10px;}
-.footer-info p{margin:3px 0;}
-.footer a{color:#888;}
-.footer a:hover{color:#d4a85d;}
-
-/* TOOLTIP */
-
-.tooltip-container{
-position:relative;
-display:inline-block;
-cursor:pointer;
-color:#d4a85d;
+.soft-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--ink-2);
 }
 
-.tooltip-text{
-visibility:hidden;
-opacity:0;
-position:absolute;
-bottom:125%;
-left:0;
-background:#1d1f23;
-color:#fff;
-padding:10px;
-border-radius:8px;
-border:1px solid #d4a85d;
-font-size:12px;
-width:max-content;
-max-width:min(250px, calc(100vw - 40px));
-white-space:normal;
-transition:0.3s;
-z-index:10;
+.soft-item i {
+  font-size: 0.65rem;
+  color: var(--gold);
 }
 
-.tooltip-text::after{
-content:"";
-position:absolute;
-top:100%;
-left:10px;
-border-width:6px;
-border-style:solid;
-border-color:#1d1f23 transparent transparent transparent;
+/* ─── PRINT ─── */
+@media print {
+  .navbar, .nav-actions, .page-actions { display: none !important; }
+  body { background: #fff; font-size: 12px; }
+  .page { margin: 0; padding: 0; max-width: 100%; }
+  .resume-header { padding: 2rem; border-top-width: 3px; }
+  .card { border: 1px solid #e0e0e0; page-break-inside: avoid; }
+  .columns { grid-template-columns: 220px 1fr; }
+  .exp-item { page-break-inside: avoid; }
 }
 
-.tooltip-container:hover .tooltip-text,
-.tooltip-container.active .tooltip-text{
-visibility:visible;
-opacity:1;
+/* ─── RESPONSIVE ─── */
+@media (max-width: 720px) {
+  .resume-header { flex-direction: column; padding: 2rem 1.5rem; }
+  .header-logo { display: none; }
+  .columns { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .header-name { font-size: 2rem; }
+  .exp-item { grid-template-columns: 1fr; gap: 0.25rem; }
+  .exp-date { text-align: left; }
 }
 
-/* RESPONSIVO */
-
-@media (max-width:900px){
-
-.resume{width:100%; padding:15px;}
-
-.header{flex-direction:column;}
-
-.name-box{
-width:100%;
-text-align:center;
-padding:30px 20px;
+.page-actions {
+  max-width: var(--max);
+  margin: 0 auto 1.25rem;
+  padding: 0 1.5rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
 }
-
-.name-box h1{font-size:32px;}
-.name-box h2{font-size:13px; letter-spacing:2px;}
-
-.photo{
-width:100%;
-height:220px;
-}
-
-.content{
-flex-direction:column;
-padding:20px;
-gap:0;
-}
-
-.left{
-width:100%;
-padding-right:0;
-margin-bottom:20px;
-}
-
-.right{width:100%;}
-
-.vertical-date{
-writing-mode:horizontal-tb;
-transform:none;
-margin-bottom:5px;
-margin-right:0;
-color:#d4a85d;
-font-size:12px;
-}
-
-.job{flex-direction:column; gap:0;}
-
-.buttons{
-justify-content:center;
-margin:15px !important;
-}
-
-}
-
-/* TELAS MUITO PEQUENAS (CELULARES MENORES) */
-
-@media (max-width:480px){
-
-.resume{padding:10px;}
-
-.name-box{padding:25px 15px;}
-
-.name-box h1{font-size:26px;}
-.name-box h2{font-size:11px; letter-spacing:1.5px;}
-
-.photo{height:180px;}
-
-.content{padding:15px;}
-
-.left h3, .right h3{font-size:16px;}
-
-.left p, .job-info p{font-size:13px;}
-
-.contact div{gap:8px;}
-
-.contact a{font-size:12px; word-break:break-all;}
-
-.project, .project-card, .learning-box{padding:12px;}
-
-.tooltip-text{
-max-width:calc(100vw - 60px);
-font-size:11px;
-}
-
-.buttons .btn{
-font-size:12px;
-padding:6px 10px;
-flex:1 1 auto;
-text-align:center;
-}
-
-}
-
-/* PRINT */
-
-@page{size:A4; margin:15mm;}
-
-@media print{
-
-body{background:#fff; color:#000;}
-
-.buttons .btn{display:none;}
-
-.resume{max-width:100%; width:100%; padding:0;}
-
-.content{padding:20px; gap:20px;}
-
-.name-box{
-background:#eee;
-color:#000;
-padding:30px;
-}
-
-.photo{height:200px;}
-h1{font-size:28px;}
-h2{font-size:12px;}
-h3{font-size:14px;}
-p{font-size:12px;}
-.skill-name{font-size:12px; color:#000;}
-.vertical-date{font-size:10px;}
-.icon{color:#000;}
-
-a{color:#000; text-decoration:none;}
-
-.job,
-.project,
-.education,
-.learning-box{page-break-inside:avoid;}
-
-.btn,.footer{display:none;}
-
-}
-
 </style>
 </head>
-
 <body>
 
-<div class="buttons" style="margin:20px; display:flex; gap:10px; flex-wrap:wrap;">
-  <a href="index.html" class="btn">← Portfólio</a>
-  <button type="button" id="downloadPdfBtn" class="btn">
-    <i class="fa-solid fa-download" style="font-size:11px;"></i> Baixar PDF
-  </button>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <img src="assets/logo.png" alt="">
+      <span>Wallace Alves</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#profile">Perfil</a></li>
+      <li><a href="#experience">Experiência</a></li>
+      <li><a href="#projects">Projetos</a></li>
+      <li><a href="#education">Formação</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="index.html" class="btn-nav"><i class="fa-solid fa-arrow-left"></i> Portfólio</a>
+      <button class="btn-nav btn-nav--gold" onclick="window.print()"><i class="fa-solid fa-print"></i> Salvar PDF</button>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE ACTIONS (MOBILE) -->
+<div class="page-actions">
+  <a href="index.html" class="btn-nav"><i class="fa-solid fa-arrow-left"></i> Voltar ao Portfólio</a>
+  <button class="btn-nav btn-nav--gold" onclick="window.print()"><i class="fa-solid fa-print"></i> Salvar PDF</button>
 </div>
 
-<div class="resume">
+<div class="page">
 
-<!-- HEADER -->
-<div class="header">
-  <div class="name-box">
-    <h1>Wallace Alves</h1>
-    <h2>Front-End Developer | Software Engineering Student</h2>
-  </div>
-  <div class="photo">
-    <img src="assets/20260318_120212-IMG_STYLE.jpg" alt="Wallace Alves">
-  </div>
-</div>
-
-<!-- CONTENT -->
-<div class="content">
-
-<!-- LEFT -->
-<div class="left">
-
-  <h3>About Me</h3>
-  <p>
-    Estudante de Engenharia de Software com experiência prática na criação de aplicações web
-    utilizando HTML, CSS e JavaScript, desenvolvendo interfaces modernas e responsivas.
-    Busco minha primeira oportunidade na área de tecnologia para aplicar meus conhecimentos
-    e evoluir como desenvolvedor.
-  </p>
-
-  <div class="contact">
-
-    <div>
-      <div class="icon"><i class="fa-solid fa-envelope"></i></div>
-      <a href="mailto:wallacedev.tech@gmail.com">wallacedev.tech@gmail.com</a>
-    </div>
-
-    <div>
-      <div class="icon"><i class="fa-solid fa-phone"></i></div>
-      <a href="tel:+5564993286584">(64) 99328-6584</a>
-    </div>
-
-    <div>
-      <div class="icon"><i class="fa-brands fa-instagram"></i></div>
-      <a href="https://instagram.com/wallacedw_" target="_blank">@wallacedw_</a>
-    </div>
-
-    <div>
-      <div class="icon"><i class="fa-brands fa-github"></i></div>
-      <a href="https://github.com/wallacedev" target="_blank">github.com/wallacedev</a>
-    </div>
-
-    <div>
-      <div class="icon"><i class="fa-solid fa-globe"></i></div>
-      <a href="https://wallacedev.tech" target="_blank">wallacedev.tech</a>
-    </div>
-
-  </div>
-
-  <!-- EDUCATION -->
-  <div class="education">
-    <h3>Education</h3>
-
-    <div class="job">
-      <div class="vertical-date">2026<br>Atual</div>
-      <div class="job-info">
-        <b>Engenharia de Software</b>
-        <p>Cursando</p>
+  <!-- ── HEADER ── -->
+  <header class="resume-header">
+    <div class="header-left">
+      <p class="header-eyebrow">Currículo Profissional · 2026</p>
+      <h1 class="header-name">Wallace Alves</h1>
+      <p class="header-role">Front-End Developer &nbsp;·&nbsp; Estudante de Engenharia de Software</p>
+      <div class="header-contact">
+        <a href="mailto:wallacedev.tech@gmail.com" class="hc-item">
+          <i class="fa-solid fa-envelope"></i> wallacedev.tech@gmail.com
+        </a>
+        <a href="tel:+5564993286584" class="hc-item">
+          <i class="fa-solid fa-phone"></i> (64) 99328-6584
+        </a>
+        <a href="https://github.com/wallacedevtech-create" target="_blank" class="hc-item">
+          <i class="fa-brands fa-github"></i> github.com/wallacedevtech-create
+        </a>
+        <a href="https://wa.me/5564993286584" target="_blank" class="hc-item">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </a>
+        <a href="https://instagram.com/wallacedw_" target="_blank" class="hc-item">
+          <i class="fa-brands fa-instagram"></i> @wallacedw_
+        </a>
       </div>
     </div>
+    
+  </header>
 
-    <div class="job">
-      <div class="vertical-date">2016<br>2019</div>
-      <div class="job-info">
-        <b>Ensino Médio</b>
-        <p>Completo</p>
+  <!-- ── COLUMNS ── -->
+  <div class="columns">
+
+    <!-- ═══ SIDEBAR ═══ -->
+    <aside class="sidebar">
+
+      <!-- PERFIL -->
+      <div class="card" id="profile">
+        <p class="sec-title">Sobre Mim</p>
+        <p class="profile-text">
+          Desenvolvedor Front-End com foco em interfaces estruturadas, responsivas e centradas no usuário.
+          Estudante de Engenharia de Software com mentalidade analítica e orientada a resultado.
+          Busco minha primeira oportunidade em desenvolvimento para aplicar conhecimento prático
+          e crescer dentro de um time técnico.
+        </p>
       </div>
-    </div>
 
-    <div class="job">
-      <div class="vertical-date">2002<br>2015</div>
-      <div class="job-info">
-        <b>Ensino Fundamental</b>
-        <p>Completo</p>
+      <!-- HABILIDADES TÉCNICAS -->
+      <div class="card">
+        <p class="sec-title">Tecnologias</p>
+        <div class="skill-list">
+          <div class="skill-row">
+            <div class="skill-label"><span>HTML5</span><span>Intermediário</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width:75%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-label"><span>CSS3 · Responsividade</span><span>Intermediário</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width:70%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-label"><span>JavaScript ES6+</span><span>Básico–Médio</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width:45%"></div></div>
+          </div>
+          <div class="skill-row">
+            <div class="skill-label"><span>Git · GitHub</span><span>Básico</span></div>
+            <div class="skill-bar"><div class="skill-bar-fill" style="width:50%"></div></div>
+          </div>
+        </div>
+        <div style="margin-top:1.25rem;">
+          <div class="tag-list">
+            <span class="tag">HTML5</span>
+            <span class="tag">CSS3</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">Git</span>
+            <span class="tag">VS Code</span>
+            <span class="tag">UI/UX</span>
+            <span class="tag">Design Responsivo</span>
+            <span class="tag">EmailJS</span>
+          </div>
+        </div>
       </div>
-    </div>
 
-  </div><!-- /education -->
+      <!-- FORMAÇÃO -->
+      <div class="card" id="education">
+        <p class="sec-title">Formação</p>
+        <div class="edu-list">
+          <div class="edu-item">
+            <div class="edu-dot"></div>
+            <div class="edu-info">
+              <p class="edu-degree">Engenharia de Software</p>
+              <p class="edu-sub">Graduação · Em andamento</p>
+              <p class="edu-date">2026 — Atual</p>
+            </div>
+          </div>
+          <div class="edu-item">
+            <div class="edu-dot" style="background:var(--rule)"></div>
+            <div class="edu-info">
+              <p class="edu-degree">Ensino Médio Completo</p>
+              <p class="edu-sub">Educação Básica</p>
+              <p class="edu-date">2016 — 2019</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <!-- TECH SKILLS -->
-  <div class="project">
-    <h3>Front-End Developer</h3>
+      <!-- COMPETÊNCIAS INTERPESSOAIS -->
+      <div class="card">
+        <p class="sec-title">Competências</p>
+        <div class="soft-grid">
+          <div class="soft-item"><i class="fa-solid fa-circle"></i> Lógica Analítica</div>
+          <div class="soft-item"><i class="fa-solid fa-circle"></i> Atenção a Detalhe</div>
+          <div class="soft-item"><i class="fa-solid fa-circle"></i> Comunicação Clara</div>
+          <div class="soft-item"><i class="fa-solid fa-circle"></i> Autonomia</div>
+          <div class="soft-item"><i class="fa-solid fa-circle"></i> Gestão de Tempo</div>
+          <div class="soft-item"><i class="fa-solid fa-circle"></i> Adaptabilidade</div>
+          <div class="soft-item"><i class="fa-solid fa-circle"></i> Pensamento Crítico</div>
+          <div class="soft-item"><i class="fa-solid fa-circle"></i> Aprendizado Rápido</div>
+        </div>
+      </div>
 
-    <div class="skill">
-      <div class="skill-name">HTML — Intermediário</div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">CSS — Intermediário</div>
-    </div>
-    <div class="skill">
-      <div class="skill-name">JavaScript — Básico</div>
-    </div>
+      <!-- IDIOMAS -->
+      <div class="card">
+        <p class="sec-title">Idiomas</p>
+        <div class="misc-list">
+          <div class="misc-item">
+            <span>Português</span>
+            <span>Nativo</span>
+          </div>
+          <div class="misc-item">
+            <span>Inglês</span>
+            <span>Básico / Leitura técnica</span>
+          </div>
+        </div>
+      </div>
 
-    <!-- PROJECTS -->
-    <h3 style="margin-top:16px;">Projects</h3>
+    </aside>
 
-    <div class="project-card">
-      <b>Vocabulary Learning Web App</b>
-      <p>Aplicação web para aprendizado de vocabulário em inglês, com reprodução de pronúncia e foco em usabilidade.</p>
-      <span class="btn-em-breve">Em breve</span>
-    </div>
+    <!-- ═══ MAIN ═══ -->
+    <main class="main">
 
-    <div class="project-card">
-      <b>Responsive Landing Page</b>
-      <p>Landing page responsiva para empresa de refrigeração com layout moderno e otimização para mobile.</p>
-      <span class="btn-em-breve">Em breve</span>
-    </div>
+      <!-- EXPERIÊNCIA -->
+      <div class="card" id="experience">
+        <p class="sec-title">Experiência Profissional</p>
+        <div class="exp-list">
 
-  </div>
+          <div class="exp-item">
+            <div class="exp-date">04/2024<br>Presente</div>
+            <div class="exp-body">
+              <p class="exp-title">Recepcionista Administrativo</p>
+              <p class="exp-company">Receita Federal do Brasil</p>
+              <p class="exp-note">Alocado via CK Construtora · Ágil LTDA · A M ABS LTDA</p>
+              <p class="exp-desc">
+                Atendimento direto ao contribuinte com triagem eficiente de demandas e resolução ágil de solicitações.
+                Organização e gestão inteligente do fluxo interno de atendimento, garantindo conformidade com procedimentos
+                institucionais. Suporte contínuo a rotinas administrativas e operacionais do setor.
+              </p>
+            </div>
+          </div>
 
-  <!-- LEARNING -->
-  <div class="learning-box">
-    <h3>Learning</h3>
-    <p>Atualmente estudando JavaScript avançado, integração com APIs, Git/GitHub e boas práticas de desenvolvimento.</p>
-  </div>
+          <div class="exp-item">
+            <div class="exp-date">02/2023<br>01/2024</div>
+            <div class="exp-body">
+              <p class="exp-title">Comando de Setor</p>
+              <p class="exp-company">Jataí Agroserv LTDA</p>
+              <p class="exp-desc">
+                Liderança de equipe em campo com monitoramento das operações da área designada.
+                Responsável por garantir conformidade técnica dos fluxos de trabalho e eficiência das
+                entregas operacionais.
+              </p>
+            </div>
+          </div>
 
-</div><!-- /left -->
+          <div class="exp-item">
+            <div class="exp-date">01/2022<br>04/2022</div>
+            <div class="exp-body">
+              <p class="exp-title">Operador de Máquina / Costureiro Industrial</p>
+              <p class="exp-company">Com Arte S2 Confecções LTDA</p>
+              <p class="exp-desc">
+                Operação e ajuste fino de maquinários têxteis de precisão. Foco em metas de produção,
+                controle de qualidade rigoroso e atenção a detalhes técnicos das peças executadas.
+              </p>
+            </div>
+          </div>
 
-<!-- RIGHT -->
-<div class="right">
+          <div class="exp-item">
+            <div class="exp-date">06/2021<br>10/2021</div>
+            <div class="exp-body">
+              <p class="exp-title">Costureiro</p>
+              <p class="exp-company">Voray</p>
+              <p class="exp-desc">
+                Execução técnica em confecção têxtil com foco em otimização de tempo e padronização
+                das entregas conforme especificações de design.
+              </p>
+            </div>
+          </div>
 
-  <h3>Skills</h3>
+          <div class="exp-item">
+            <div class="exp-date">09/2016<br>03/2017</div>
+            <div class="exp-body">
+              <p class="exp-title">Auxiliar de Alimentação</p>
+              <p class="exp-company">SESI — Serviço Social da Indústria</p>
+              <p class="exp-desc">
+                Suporte operacional logístico com controle de estoque, organização sanitária e
+                atendimento ao público conforme normas internas da instituição.
+              </p>
+            </div>
+          </div>
 
-  <div class="skill">
-    <div class="skill-name">Comunicação</div>
-    <div class="bar"><span style="width:80%"></span></div>
-  </div>
+        </div>
+      </div>
 
-  <div class="skill">
-    <div class="skill-name">Gestão</div>
-    <div class="bar"><span style="width:80%"></span></div>
-  </div>
+      <!-- PROJETOS -->
+      <div class="card" id="projects">
+        <p class="sec-title">Projetos Desenvolvidos</p>
+        <div class="project-list">
 
-  <div class="skill">
-    <div class="skill-name">Resolução de Problemas</div>
-    <div class="bar"><span style="width:85%"></span></div>
-  </div>
+          <div class="project-item">
+            <div class="project-item-header">
+              <span class="project-name">D'Ledger</span>
+              <span class="project-badge">Ao vivo</span>
+            </div>
+            <p class="project-desc">
+              Plataforma de gestão financeira pessoal com controle patrimonial, fluxo de caixa,
+              reservas, investimentos e painel de inteligência financeira.
+            </p>
+            <p class="project-stack">HTML · CSS · JavaScript · localStorage</p>
+          </div>
 
-  <div class="skill">
-    <div class="skill-name">Tecnologia</div>
-    <div class="bar"><span style="width:85%"></span></div>
-  </div>
+          <div class="project-item">
+            <div class="project-item-header">
+              <span class="project-name">D'Ledger Flow</span>
+              <span class="project-badge">Ao vivo</span>
+            </div>
+            <p class="project-desc">
+              Aplicativo de gestão financeira para trabalhadores autônomos com renda variável.
+              Interface simplificada com foco na usabilidade mobile-first.
+            </p>
+            <p class="project-stack">HTML · CSS · JavaScript</p>
+          </div>
 
-  <h3>Experience</h3>
+          <div class="project-item">
+            <div class="project-item-header">
+              <span class="project-name">Aes Language</span>
+              <span class="project-badge">Ao vivo</span>
+            </div>
+            <p class="project-desc">
+              Linguagem de programação experimental voltada para criação e treinamento de
+              Inteligências Artificiais. Projeto de pesquisa e desenvolvimento próprio.
+            </p>
+            <p class="project-stack">JavaScript · Parsing · Interpretador customizado</p>
+          </div>
 
-  <div class="job">
-    <div class="vertical-date">04/2024<br>2026</div>
-    <div class="job-info">
-      <b>Recepcionista – Receita Federal</b>
-      <p>Atendimento ao público, organização de fluxo de atendimento, suporte administrativo e resolução de demandas operacionais.</p>
-      <p class="tooltip-container">
-        Empresas terceirizadas
-        <span class="tooltip-text">
-          CK Construtora e Serviços LTDA<br>
-          Ágil LTDA<br>
-          A M ABS LTDA
-        </span>
-      </p>
-    </div>
-  </div>
+          <div class="project-item">
+            <div class="project-item-header">
+              <span class="project-name">Vocabulary Learning App</span>
+              <span class="project-badge">Em desenvolvimento</span>
+            </div>
+            <p class="project-desc">
+              Aplicação web para estudo prático de vocabulário em inglês com pronúncia guiada
+              e metodologia baseada em repetição espaçada.
+            </p>
+            <p class="project-stack">HTML · CSS · JavaScript · Web Speech API</p>
+          </div>
 
-  <div class="job">
-    <div class="vertical-date">02/2023<br>01/2024</div>
-    <div class="job-info">
-      <b>Comando de Setor</b>
-      <p>JATAI AGROSERV LTDA</p>
-    </div>
-  </div>
+        </div>
+      </div>
 
-  <div class="job">
-    <div class="vertical-date">01/2022<br>04/2022</div>
-    <div class="job-info">
-      <b>Costureiro</b>
-      <p>COM ARTE S2 CONFECÇÕES LTDA</p>
-    </div>
-  </div>
+    </main>
 
-  <div class="job">
-    <div class="vertical-date">06/2021<br>10/2021</div>
-    <div class="job-info">
-      <b>Costureiro</b>
-      <p>VORAY</p>
-    </div>
-  </div>
+  </div><!-- /columns -->
 
-  <div class="job">
-    <div class="vertical-date">09/2016<br>03/2017</div>
-    <div class="job-info">
-      <b>Auxiliar nos Serviços de Alimentação</b>
-      <p>SERVIÇO SOCIAL DA INDÚSTRIA</p>
-    </div>
-  </div>
+</div><!-- /page -->
 
-</div><!-- /right -->
-</div><!-- /content -->
-</div><!-- /resume -->
-
-<footer class="footer">
-  <p class="footer-text">Este currículo está disponível online como parte do meu portfólio profissional.</p>
-  <div class="footer-info">
-    <p>© 2026 Wallace Alves</p>
-    <p>Email: <a href="mailto:wallacedev.tech@gmail.com">wallacedev.tech@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/wallacedev" target="_blank">github.com/wallacedev</a></p>
-  </div>
+<footer style="border-top:1px solid var(--rule); padding:1.5rem; text-align:center; font-size:0.72rem; color:var(--ink-3); background:var(--white);">
+  <strong style="color:var(--ink)">Wallace Alves</strong> &nbsp;·&nbsp; Front-End Developer &nbsp;·&nbsp;
+  <a href="mailto:wallacedev.tech@gmail.com" style="color:var(--gold); text-decoration:none;">wallacedev.tech@gmail.com</a>
+  &nbsp;·&nbsp; © 2026
 </footer>
 
 <script>
-var downloadPdfBtn = document.getElementById('downloadPdfBtn');
-if(downloadPdfBtn){
-  downloadPdfBtn.addEventListener('click', function(){
-    window.print();
+// Active nav on scroll
+const sections = document.querySelectorAll('[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 100) current = s.id;
   });
-}
-
-document.querySelectorAll('.tooltip-container').forEach(function(el){
-  el.addEventListener('click', function(e){
-    e.stopPropagation();
-    var isActive = this.classList.contains('active');
-    document.querySelectorAll('.tooltip-container.active').forEach(function(o){ o.classList.remove('active'); });
-    if(!isActive){ this.classList.add('active'); }
+  navLinks.forEach(a => {
+    a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : '';
   });
-});
-document.addEventListener('click', function(){
-  document.querySelectorAll('.tooltip-container.active').forEach(function(o){ o.classList.remove('active'); });
 });
 </script>
 
