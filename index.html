@@ -269,15 +269,13 @@
     }
 
     .btn--primary {
+      width: 50%;
       background: linear-gradient(135deg, #d4a85d, #b8873a);
       color: #000;
       border: none;
       box-shadow: 0 4px 20px rgba(212,168,93,0.3);
     }
-    .btn--primary:hover {
-      box-shadow: 0 8px 30px rgba(212,168,93,0.5);
-      transform: translateY(-2px);
-    }
+    
 
     .btn--outline {
       background: transparent;
@@ -299,8 +297,8 @@
 
     .hero__logo-wrap {
       position: relative;
-      width: 380px;
-      height: 380px;
+      width: 320px;
+      height: 320px;
     }
 
     .hero__logo-wrap::before {
@@ -345,8 +343,8 @@
     }
 
     .hero__logo-img img {
-      width: 105%;
-      height: 105%;
+      width: 95%;
+      height: 95%;
       border-radius: 50%;
       object-fit: contain;
   
@@ -536,66 +534,85 @@
       font-weight: 500;
     }
 
-    /* SERVICES */
-    .services__grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      margin-top: 3rem;
-    }
+/* Grade dos serviços */
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
 
-    .service__card {
-      padding: 2.5rem 2rem;
-      background: var(--dark3);
-      border: 1px solid rgba(255,255,255,0.05);
-      border-radius: 1.25rem;
-      transition: all 0.4s;
-      position: relative;
-      overflow: hidden;
-    }
+/* Card */
+.service__card {
+  overflow: hidden;
+  border: 1px solid #d4a85df1;
+  border-radius: 18px;
+  background: #171717;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .service__card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-      opacity: 0;
-      transition: opacity 0.4s;
-    }
+.service__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.25);
+}
 
-    .service__card:hover {
-      border-color: rgba(212,168,93,0.2);
-      transform: translateY(-6px);
-      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-    }
-    .service__card:hover::before { opacity: 1; }
+/* Imagem superior */
+.service__image {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: #171717;
+}
 
-    .service__icon {
-      width: 56px; height: 56px;
-      background: var(--gold-dim);
-      border-radius: 1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.5rem;
-      font-size: 1.5rem;
-      color: var(--gold);
-      border: 1px solid var(--gold-glow);
-    }
+.service__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
 
-    .service__card h4 {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 0.75rem;
-    }
+.service__card:hover .service__image img {
+  transform: scale(1.05);
+}
 
-    .service__card p {
-      font-size: 0.875rem;
-      color: #6b7280;
-      line-height: 1.7;
-    }
+/* Área de texto */
+.service__content {
+  padding: 22px 24px 26px;
+  background: #171717;
+}
+
+
+.service__content h4 {
+  margin-bottom: 10px;
+  color: #dadada;
+  font-size: 17px;
+}
+
+.service__content p {
+  margin: 0;
+  color: #dadada;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+  .services__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service__image {
+    height: 200px;
+  }
+}
 
     /* PORTFOLIO */
     .portfolio__grid {
@@ -609,8 +626,8 @@
       display: block;
       border-radius: 1.25rem;
       overflow: hidden;
-      border: 1px solid rgba(212,168,93,0.1);
-      background: var(--dark3);
+      border: 1px solid #d4a85df1;
+      background: #dadada;
       text-decoration: none;
       transition: all 0.4s;
       position: relative;
@@ -650,29 +667,32 @@
     }
 
     .portfolio__badge {
-      display: inline-block;
-      padding: 0.2rem 0.75rem;
-      background: var(--gold-dim);
-      border: 1px solid rgba(212,168,93,0.3);
-      border-radius: 2rem;
-      font-size: 0.7rem;
-      color: var(--gold);
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
-    }
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+
+    background: #fff8e9;
+    border: 1px solid #d4ad65;
+    border-radius: 2rem;
+
+    font-size: 0.7rem;
+    color: #805719;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+
+    margin-bottom: 0.75rem;
+}
 
     .portfolio__body h4 {
       font-size: 1rem;
       font-weight: 700;
-      color: #fff;
+      color: #000000;
       margin-bottom: 0.4rem;
     }
 
     .portfolio__body p {
       font-size: 0.8rem;
-      color: #6b7280;
+      color: #484b50;
       line-height: 1.6;
     }
 
@@ -836,7 +856,7 @@
 
     /*  CAPA  */
 .capa-section{
-display: none;
+width: 90%;
 }
 
 
@@ -951,6 +971,8 @@ display: none;
     }
     body.has-cursor .cursor-dot, body.has-cursor .cursor-ring { display: block; }
     body.has-cursor.cursor-on .cursor-dot, body.has-cursor.cursor-on .cursor-ring { opacity: 1; }
+    
+    /*
     body.has-cursor, body.has-cursor * { cursor: none !important; }
     .cursor-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); transition: opacity .3s; }
     .cursor-ring {
@@ -959,6 +981,7 @@ display: none;
       transition: width .25s, height .25s, background .25s, border-color .25s, opacity .3s;
     }
     .cursor-ring.hover { width: 64px; height: 64px; background: var(--gold-dim); border-color: var(--gold); }
+    */
 
     /* Nav */
     nav { transition: background .3s, box-shadow .3s; }
@@ -1007,20 +1030,105 @@ display: none;
       position: absolute; inset: -44px; z-index: 3;
       pointer-events: none; animation: spin 22s linear infinite;
     }
-    .orbit__item {
-      position: absolute; width: 40px; height: 40px; border-radius: 50%;
-      background: rgba(10,10,10,.92);
-      border: 1px solid var(--gold-glow);
-      color: var(--gold); font-size: 1.15rem;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 0 18px rgba(212,168,93,.25);
-      animation: spinRev 22s linear infinite;
+
+
+/* Órbita ao redor da foto */
+.orbit {
+    position: absolute;
+    inset: -44px;
+    z-index: 3;
+    pointer-events: none;
+
+    border-radius: 50%;
+}
+
+
+
+/* Cada planeta percorre sua própria órbita */
+.orbit__item {
+    --radius: 150px;
+    --start-angle: 0deg;
+    --duration: 20s;
+    --planet-size: 40px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: var(--planet-size);
+    height: var(--planet-size);
+    margin: calc(var(--planet-size) / -2);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    border: 1px solid rgba(212, 175, 55, 0.7);
+
+
+
+    color: #d4af37;
+    font-size: calc(var(--planet-size) * 0.48);
+
+    box-shadow:
+        inset -5px -5px 10px rgba(0, 0, 0, 0.7),
+        0 0 12px rgba(212, 175, 55, 0.2);
+
+    animation: planetOrbit var(--duration) linear infinite;
+}
+
+/* Movimento circular */
+@keyframes planetOrbit {
+    from {
+        transform:
+            rotate(var(--start-angle))
+            translateX(var(--radius))
+            rotate(calc(var(--start-angle) * -1));
     }
-    .orbit__item.o1 { top: 0; left: 50%; margin-left: -20px; }
-    .orbit__item.o2 { top: 50%; right: 0; margin-top: -20px; }
-    .orbit__item.o3 { bottom: 0; left: 50%; margin-left: -20px; }
-    .orbit__item.o4 { top: 50%; left: 0; margin-top: -20px; }
-    @keyframes spinRev { to { transform: rotate(-360deg); } }
+
+    to {
+        transform:
+            rotate(calc(var(--start-angle) + 360deg))
+            translateX(var(--radius))
+            rotate(calc((var(--start-angle) + 360deg) * -1));
+    }
+}
+
+/* HTML5 — planeta maior e órbita interna */
+/* HTML5 — planeta maior */
+.orbit__item.o1 {
+    --planet-size: 48px;
+    --radius: 190px;
+    --start-angle: 0deg;
+    --duration: 14s;
+}
+
+/* CSS3 — planeta médio */
+.orbit__item.o2 {
+    --planet-size: 38px;
+    --radius: 250px;
+    --start-angle: 90deg;
+    --duration: 20s;
+}
+
+
+/* JavaScript — planeta menor */
+.orbit__item.o3 {
+    --planet-size: 30px;
+    --radius: 310px;
+    --start-angle: 180deg;
+    --duration: 26s;
+}
+
+/* React — planeta intermediário */
+.orbit__item.o4 {
+    --planet-size: 42px;
+    --radius: 355px;
+    --start-angle: 270deg;
+    --duration: 32s;
+}
+
 
     /* Títulos com brilho */
     .section__title span {
@@ -1058,10 +1166,8 @@ display: none;
     @keyframes waPulse { 0% { transform: scale(1); opacity: .7; } 100% { transform: scale(1.7); opacity: 0; } }
 
     @media (max-width: 768px) {
-      .orbit { inset: -34px; }
-      .orbit__item { width: 32px; height: 32px; font-size: .95rem; }
-      .orbit__item.o1, .orbit__item.o3 { margin-left: -16px; }
-      .orbit__item.o2, .orbit__item.o4 { margin-top: -16px; }
+      .orbit { display: none;}
+          
     }
 
     /* Acessibilidade: respeita quem prefere menos movimento */
@@ -1521,11 +1627,12 @@ display: none;
 </section>
 
 <section class="capa-section">
-  <img src="assets/capa-logo.png" alt="Wallace Alves Banner" class="capa">
+  <img src="assets/capa logo.png" alt="Wallace Alves Banner" class="capa">
 </section>
 
 <!-- TECH TICKER -->
 <div class="tech__ticker">
+
   <div class="tech__track">
     <div class="tech__item"><i class="ri-html5-fill"></i><span>HTML5</span></div>
     <div class="tech__item"><i class="ri-css3-fill"></i><span>CSS3</span></div>
@@ -1597,33 +1704,82 @@ display: none;
   </div>
 </section>
 
-<section class="capa-section">
-  <img src="assets/arte logo.png" alt="Wallace Alves Banner" class="capa">
-</section>
+
 
 <!-- SERVICES -->
 <section id="service" class="services__bg">
+
   <div class="section__container">
     <span class="section__eyebrow reveal">O que eu faço</span>
-    <h2 class="section__title reveal">Meus <span>Serviços</span></h2>
+
+    <h2 class="section__title reveal">
+      Meus <span>Serviços</span>
+    </h2>
+
     <div class="services__grid">
-      <div class="service__card reveal">
-        <div class="service__icon"><i class="ri-window-fill"></i></div>
-        <h4>Desenvolvimento Front-End</h4>
-        <p>Criação de interfaces modernas, responsivas e bem estruturadas, focadas na experiência do usuário.</p>
-      </div>
-      <div class="service__card reveal">
-<div class="service__icon">
-    <i class="ri-macbook-line"></i>
-</div>
-        <h4>Interfaces Responsivas</h4>
-        <p>Layouts adaptáveis para diferentes dispositivos, com navegação fluida no desktop e no mobile.</p>
-      </div>
-      <div class="service__card reveal">
-        <div class="service__icon"><i class="ri-lightbulb-flash-line"></i></div>
-        <h4>Soluções Práticas</h4>
-        <p>Foco em resolver problemas reais com soluções simples, funcionais e eficientes.</p>
-      </div>
+
+      <!-- Card 1: Desenvolvimento Front-End -->
+      <article class="service__card reveal">
+        <div class="service__image">
+          <img
+            src="assets/Interface-Web.png"
+            alt="Interface de desenvolvimento web"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="service__content">
+          
+
+          <h4>Desenvolvimento Front-End</h4>
+          <p>
+            Criação de interfaces modernas, responsivas e bem estruturadas,
+            focadas na experiência do usuário.
+          </p>
+        </div>
+      </article>
+
+      <!-- Card 2: Interfaces Responsivas -->
+      <article class="service__card reveal">
+        <div class="service__image">
+          <img
+            src="assets/Todos-Dispositivos.png"
+            alt="Interfaces adaptadas a diferentes dispositivos"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="service__content">
+          
+
+          <h4>Interfaces Responsivas</h4>
+          <p>
+            Layouts adaptáveis para diferentes dispositivos, com navegação
+            fluida no desktop e no mobile.
+          </p>
+        </div>
+      </article>
+
+      <!-- Card 3: Soluções Práticas -->
+      <article class="service__card reveal">
+        <div class="service__image">
+          <img
+            src="assets/Hub-de-Dados.png"
+            alt="Conceito visual de tecnologia e resolução de problemas"
+            loading="lazy"
+          >
+        </div>
+
+        <div class="service__content">
+
+          <h4>Soluções Práticas</h4>
+          <p>
+            Foco em resolver problemas reais com soluções simples,
+            funcionais e eficientes.
+          </p>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
@@ -1663,29 +1819,29 @@ display: none;
         <img src="assets/dledger-dashboard.png" alt="D'Ledger" class="portfolio__img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
         <div class="portfolio__placeholder" style="display:none"><i class="ri-bar-chart-grouped-fill"></i></div>
         <div class="portfolio__body">
-          <span class="portfolio__badge">Proprietário</span>
+          <!--<span class="portfolio__badge">Proprietário</span>-->
           <h4>D'Ledger</h4>
           <p>Plataforma de gestão financeira pessoal com controle patrimonial, fluxo de caixa e inteligência financeira.</p>
         </div>
       </a>
 
-      <a href="https://wallacedevtech-create.github.io/-aes-language/" class="portfolio__card reveal" target="_blank">
+      <!--<a href="https://wallacedevtech-create.github.io/-aes-language/" class="portfolio__card reveal" target="_blank">
         <div class="portfolio__arrow"><i class="ri-arrow-right-up-line"></i></div>
         <img src="assets/aes-linguagem.png" alt="Aes" class="portfolio__img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
         <div class="portfolio__placeholder" style="display:none"><i class="ri-braces-fill"></i></div>
         <div class="portfolio__body">
-          <span class="portfolio__badge">Projeto Próprio</span>
+          <span class="portfolio__badge">Proprietário</span>
           <h4>Aes Language</h4>
           <p>Linguagem de programação para criação e treinamento de Inteligências Artificiais.</p>
         </div>
-      </a>
+      </a>-->
 
       <a href="https://wallacedevtech-create.github.io/D-Ledger_Flow/" class="portfolio__card reveal" target="_blank">
         <div class="portfolio__arrow"><i class="ri-arrow-right-up-line"></i></div>
         <img src="assets/dledger-flow.png" alt="D'Ledger Flow" class="portfolio__img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"/>
         <div class="portfolio__placeholder" style="display:none"><i class="ri-exchange-funds-fill"></i></div>
         <div class="portfolio__body">
-          <span class="portfolio__badge">Projeto Próprio</span>
+          <!--<span class="portfolio__badge">Proprietário</span>-->
           <h4>D'Ledger Flow</h4>
           <p>Aplicativo de gestão financeira para trabalhadores autônomos e renda variável.</p>
         </div>
@@ -1711,7 +1867,7 @@ display: none;
         <div class="contact__socials reveal">
           <a href="https://github.com/wallacedevtech-create" target="_blank" class="social__btn" title="GitHub"><i class="ri-github-fill"></i></a>
           <a href="#" class="social__btn" id="openModalBtn" title="E-mail"><i class="ri-mail-fill"></i></a>
-          <a href="https://instagram.com/wallacedw_" target="_blank" class="social__btn" title="Instagram"><i class="ri-instagram-line"></i></a>
+          <a href="https://instagram.com/wallacedev.tech" target="_blank" class="social__btn" title="Instagram"><i class="ri-instagram-line"></i></a>
           <a href="https://wa.me/5564993286584" target="_blank" class="social__btn" title="WhatsApp"><i class="ri-whatsapp-line"></i></a>
         </div>
       </div>
@@ -2008,16 +2164,32 @@ reveals.forEach(r => observer.observe(r));
   }
 
   // --- órbita de tecnologias em volta da foto ---
-  const wrap = $('.hero__logo-wrap');
-  if (wrap && !reduce) {
-    wrap.insertAdjacentHTML('beforeend',
-      '<div class="orbit" aria-hidden="true">' +
-      '<span class="orbit__item o1"><i class="ri-html5-fill"></i></span>' +
-      '<span class="orbit__item o2"><i class="ri-css3-fill"></i></span>' +
-      '<span class="orbit__item o3"><i class="ri-javascript-fill"></i></span>' +
-      '<span class="orbit__item o4"><i class="ri-reactjs-line"></i></span>' +
-      '</div>');
-  }
+const wrap = document.querySelector('.hero__logo-wrap');
+
+if (wrap) {
+    wrap.insertAdjacentHTML(
+        'beforeend',
+        `
+        <div class="orbit" aria-hidden="true">
+            <span class="orbit__item o1">
+                <i class="ri-html5-fill"></i>
+            </span>
+
+            <span class="orbit__item o2">
+                <i class="ri-css3-fill"></i>
+            </span>
+
+            <span class="orbit__item o3">
+                <i class="ri-javascript-fill"></i>
+            </span>
+
+            <span class="orbit__item o4">
+                <i class="ri-reactjs-line"></i>
+            </span>
+        </div>
+        `
+    );
+}
 
   // --- efeitos que dependem de mouse (só desktop) ---
   if (fine && !reduce) {
